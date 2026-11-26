@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tessera_about_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FF000000"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="60dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_tessera_about_logo" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="18dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tessera"
+                    android:fontFamily="selawik-light"
+                    android:textSize="36sp"
+                    android:textColor="#FFFFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OS"
+                    android:fontFamily="selawik-semibold"
+                    android:textSize="36sp"
+                    android:textColor="#FFFFFFFF" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RETURN TO FORM"
+                android:fontFamily="selawik-semilight"
+                android:textSize="11sp"
+                android:letterSpacing="0.22"
+                android:textColor="#FF888888" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device"
+        android:fontFamily="selawik"
+        android:textSize="13sp"
+        android:textColor="#FF888888" />
+
+    <TextView
+        android:id="@+id/tessera_about_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Nothing Phone (1) (Spacewar)"
+        android:fontFamily="selawik-light"
+        android:textSize="22sp"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Operating System"
+        android:fontFamily="selawik"
+        android:textSize="13sp"
+        android:textColor="#FF888888" />
+
+    <TextView
+        android:id="@+id/tessera_about_os"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="TesseraOS 1.0 (Android 16)"
+        android:fontFamily="selawik-light"
+        android:textSize="22sp"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kernel"
+        android:fontFamily="selawik"
+        android:textSize="13sp"
+        android:textColor="#FF888888" />
+
+    <TextView
+        android:id="@+id/tessera_about_kernel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Linux 6.12.81-CALY-Daitaku-Stable"
+        android:fontFamily="selawik-light"
+        android:textSize="22sp"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interface"
+        android:fontFamily="selawik"
+        android:textSize="13sp"
+        android:textColor="#FF888888" />
+
+    <TextView
+        android:id="@+id/tessera_about_shell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TesseraHome Metro UI"
+        android:fontFamily="selawik-light"
+        android:textSize="22sp"
+        android:textColor="#FFFFFFFF" />
+</LinearLayout>

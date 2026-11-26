@@ -212,36 +212,31 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     private void initHeader() {
-        // TODO: Migrate into its own controller.
         final LayoutPreference headerPreference =
                 getPreferenceScreen().findPreference(KEY_MY_DEVICE_INFO_HEADER);
-        final boolean shouldDisplayHeader = getContext().getResources().getBoolean(
-                R.bool.config_show_device_header_in_device_info);
-        headerPreference.setVisible(shouldDisplayHeader);
-        if (!shouldDisplayHeader) {
+        if (headerPreference == null) {
             return;
         }
-        final View headerView = headerPreference.findViewById(R.id.entity_header);
-        final Activity context = getActivity();
-        final Bundle bundle = getArguments();
-        final EntityHeaderController controller = EntityHeaderController
-                .newInstance(context, this, headerView)
-                .setButtonActions(EntityHeaderController.ActionType.ACTION_NONE,
-                        EntityHeaderController.ActionType.ACTION_NONE);
-
-        // TODO: There may be an avatar setting action we can use here.
-        final int iconId = bundle != null ? bundle.getInt("icon_id", 0) : 0;
-        if (iconId == 0) {
-            final UserManager userManager = (UserManager) getActivity().getSystemService(
-                    Context.USER_SERVICE);
-            final UserInfo info = Utils.getExistingUser(userManager,
-                    android.os.Process.myUserHandle());
-            controller.setLabel(info.name);
-            controller.setIcon(
-                    com.android.settingslib.Utils.getUserIcon(getActivity(), userManager, info));
+        headerPreference.setVisible(true);
+        final android.widget.TextView deviceView =
+                headerPreference.findViewById(R.id.tessera_about_device);
+        if (deviceView != null) {
+            deviceView.setText(android.os.Build.MANUFACTURER + " " + android.os.Build.MODEL
+                    + " (" + android.os.Build.DEVICE + ")");
         }
-
-        controller.done(true /* rebindActions */);
+        final android.widget.TextView osView =
+                headerPreference.findViewById(R.id.tessera_about_os);
+        if (osView != null) {
+            osView.setText("TesseraOS 1.0 (Android " + android.os.Build.VERSION.RELEASE + ")");
+        }
+        final android.widget.TextView kernelView =
+                headerPreference.findViewById(R.id.tessera_about_kernel);
+        if (kernelView != null) {
+            String kver = System.getProperty("os.version");
+            if (kver != null && !kver.isEmpty()) {
+                kernelView.setText("Linux " + kver);
+            }
+        }
     }
 
     @Override
