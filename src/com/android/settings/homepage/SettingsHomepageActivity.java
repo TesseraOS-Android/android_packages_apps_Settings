@@ -411,6 +411,11 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         FeatureFactory.getFeatureFactory().getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar,
                         SettingsEnums.SETTINGS_HOMEPAGE);
+        View pivotApps = findViewById(R.id.tessera_pivot_apps);
+        if (pivotApps != null) {
+            pivotApps.setOnClickListener(v -> startActivity(
+                    new Intent(android.provider.Settings.ACTION_APPLICATION_SETTINGS)));
+        }
     }
 
     private void updateHomepageUI() {

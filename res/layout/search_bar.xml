@@ -39,7 +39,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SETTINGS"
+            android:text="@string/settings_label"
+            android:textAllCaps="true"
             android:fontFamily="selawik"
             android:textStyle="bold"
             android:textSize="13sp"
@@ -55,30 +56,44 @@
             android:src="@drawable/ic_homepage_search" />
     </LinearLayout>
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="2dp"
-        android:clipChildren="false">
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:fillViewport="false">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="system"
-            android:fontFamily="selawik-light"
-            android:textSize="48sp"
-            android:textColor="#FFFFFFFF"
-            android:singleLine="true" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="applications"
-            android:fontFamily="selawik-light"
-            android:textSize="48sp"
-            android:textColor="#FF555555"
-            android:singleLine="true" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tessera_pivot_system"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/header_category_system"
+                android:fontFamily="selawik-light"
+                android:textSize="48sp"
+                android:textColor="#FFFFFFFF"
+                android:singleLine="true"
+                android:ellipsize="none" />
+
+            <TextView
+                android:id="@+id/tessera_pivot_apps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:paddingEnd="24dp"
+                android:text="@string/apps_dashboard_title"
+                android:fontFamily="selawik-light"
+                android:textSize="48sp"
+                android:textColor="#FF555555"
+                android:singleLine="true"
+                android:ellipsize="none"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+    </HorizontalScrollView>
 </LinearLayout>
