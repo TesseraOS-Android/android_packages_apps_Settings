@@ -17,34 +17,27 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
-    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-    android:minHeight="72dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:minHeight="62dp"
     android:gravity="center_vertical"
-    android:background="?android:attr/selectableItemBackground"
+    android:background="#FF000000"
     android:clipToPadding="false"
     android:baselineAligned="false">
 
     <LinearLayout
         android:id="@+id/icon_frame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="40dp"
-        android:minHeight="40dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:layout_marginEnd="-8dp">
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
         <androidx.preference.internal.PreferenceImageView
             android:id="@android:id/icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"/>
-
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -52,10 +45,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:paddingStart="@dimen/homepage_preference_text_padding_start"
-        android:paddingEnd="16dp">
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <TextView
             android:id="@android:id/title"
@@ -64,10 +55,10 @@
             android:layout_gravity="start"
             android:textAlignment="viewStart"
             android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceListItem"
-            android:hyphenationFrequency="normalFast"
-            android:lineBreakWordStyle="phrase"
-            android:ellipsize="marquee"/>
+            android:fontFamily="selawik-light"
+            android:textSize="26sp"
+            android:textColor="#FFFFFFFF"
+            android:ellipsize="end"/>
 
         <TextView
             android:id="@android:id/summary"
@@ -75,13 +66,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@android:id/title"
             android:layout_alignStart="@android:id/title"
+            android:layout_marginTop="1dp"
             android:layout_gravity="start"
             android:textAlignment="viewStart"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@androidprv:color/materialColorOnSurfaceVariant"
-            android:maxLines="4"
-            android:hyphenationFrequency="normalFast"
-            android:lineBreakWordStyle="phrase"
-            style="@style/PreferenceSummaryTextStyle"/>
+            android:fontFamily="selawik"
+            android:textSize="13sp"
+            android:textColor="#FF888888"
+            android:maxLines="2"
+            android:ellipsize="end"/>
     </RelativeLayout>
 </LinearLayout>

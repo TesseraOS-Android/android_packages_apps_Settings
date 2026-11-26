@@ -15,12 +15,16 @@
   ~ limitations under the License.
   -->
 
-<com.google.android.material.materialswitch.MaterialSwitch
+<Switch
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/switchWidget"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:switchMinWidth="58dp"
+    android:minWidth="58dp"
     android:background="@null"
     android:clickable="false"
     android:focusable="false"
-    android:theme="@style/Theme.Material3.DynamicColors.DayNight" />
+    android:showText="false"
+    android:thumb="@drawable/settingslib_switch_thumb"
+    android:track="@drawable/settingslib_switch_track" />

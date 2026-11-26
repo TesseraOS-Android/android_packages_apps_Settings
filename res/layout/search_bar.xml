@@ -15,37 +15,70 @@
      limitations under the License.
 -->
 
-<com.google.android.material.card.MaterialCardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/SearchBarStyle_v2"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FF000000"
+    android:paddingTop="12dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp">
 
     <LinearLayout
         android:id="@+id/search_action_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="72dp"
-        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:focusedByDefault="true"
-        android:background="@drawable/search_bar_selected_background">
+        android:gravity="center_vertical"
+        android:focusedByDefault="true">
+
+        <TextView
+            android:id="@+id/search_bar_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SETTINGS"
+            android:fontFamily="selawik"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:letterSpacing="0.06"
+            android:textColor="#FFFFFFFF" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:importantForAccessibility="no"
+            android:tint="#FF888888"
             android:src="@drawable/ic_homepage_search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:clipChildren="false">
+
         <TextView
-            android:id="@+id/search_bar_title"
-            style="@style/TextAppearance.SearchBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:paddingEnd="8dp"
-            android:text="@string/homepage_search"/>
+            android:text="system"
+            android:fontFamily="selawik-light"
+            android:textSize="48sp"
+            android:textColor="#FFFFFFFF"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="applications"
+            android:fontFamily="selawik-light"
+            android:textSize="48sp"
+            android:textColor="#FF555555"
+            android:singleLine="true" />
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
