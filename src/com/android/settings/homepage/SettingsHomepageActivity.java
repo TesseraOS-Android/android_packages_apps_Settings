@@ -411,10 +411,36 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         FeatureFactory.getFeatureFactory().getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar,
                         SettingsEnums.SETTINGS_HOMEPAGE);
+        View pivotSystem = findViewById(R.id.tessera_pivot_system);
         View pivotApps = findViewById(R.id.tessera_pivot_apps);
         if (pivotApps != null) {
-            pivotApps.setOnClickListener(v -> startActivity(
-                    new Intent(android.provider.Settings.ACTION_APPLICATION_SETTINGS)));
+            Runnable openAppsPivot = () -> {
+                if (pivotSystem != null) {
+                    pivotSystem.animate().translationX(-48f).alpha(0.35f).setDuration(140).start();
+                }
+                pivotApps.animate().translationX(-48f).alpha(1.0f).setDuration(140).start();
+                android.app.ActivityOptions opts = android.app.ActivityOptions.makeCustomAnimation(
+                        this, R.anim.tessera_pivot_in_right, R.anim.tessera_pivot_out_left);
+                startActivity(
+                        new Intent(android.provider.Settings.ACTION_APPLICATION_SETTINGS),
+                        opts.toBundle());
+            };
+            pivotApps.setOnClickListener(v -> openAppsPivot.run());
+            View pivotParent = (View) pivotApps.getParent();
+            if (pivotParent != null) {
+                final float[] downX = new float[1];
+                pivotParent.setOnTouchListener((v, event) -> {
+                    if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+                        downX[0] = event.getX();
+                    } else if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+                        if (downX[0] - event.getX() > 80f) {
+                            openAppsPivot.run();
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+            }
         }
     }
 
