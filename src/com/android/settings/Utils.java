@@ -1546,6 +1546,7 @@ public final class Utils extends com.android.settingslib.Utils {
 
                     // Apply the insets paddings to the view.
                     v.setPadding(insets.left, newInsetsTop, insets.right, insets.bottom);
+                    if (v instanceof android.view.ViewGroup) { ((android.view.ViewGroup) v).setClipToPadding(true); }
 
                     // Return CONSUMED if you don't want the window insets to keep being
                     // passed down to descendant views.
