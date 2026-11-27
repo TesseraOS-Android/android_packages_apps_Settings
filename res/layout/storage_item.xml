@@ -81,10 +81,6 @@
                 app:trackCornerRadius="0dp"
                 app:trackColor="#FF262626"
                 app:indicatorColor="@android:color/system_accent1_500"
-                app:trackCornerRadius="0dp"
-                app:trackStopIndicatorSize="0dp"
-                app:indicatorColor="@android:color/system_accent1_500"
-                app:trackColor="#FF262626"
                 style="@style/SettingsLibProgressBarStyle.Linear.Expressive" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
